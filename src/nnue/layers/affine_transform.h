@@ -105,6 +105,7 @@ affine_transform_non_ssse3(i32* output, const i8* weights, const i32* biases, co
 
         #endif
     }
+    #else
     std::memcpy(output, biases, sizeof(i32) * OutputDimensions);
 
     // Traverse weights in transpose order to take advantage of input sparsity
